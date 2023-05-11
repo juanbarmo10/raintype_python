@@ -120,9 +120,9 @@ def raintype(fname, fileDir, refl=None, refl_missing_val=-9999, refl_dx=1, minZd
 
   #If this is the first file in a batch, create a background reflectivity mask and
   #a mask for identifying regions around convective cores.
-  if fname == os.listdir(fileDir)[0]:
-    bgmask = rtf.makebgmask(backgrndradius,refl_dx)
-    maskcell = rtf.makeconvmask(maxConvRadius,refl_dx) 
+#  if fname == os.listdir(fileDir)[0]:
+  bgmask = rtf.makebgmask(backgrndradius,refl_dx)
+  maskcell = rtf.makeconvmask(maxConvRadius,refl_dx) 
 
   #Now determine the background reflectivity at each grid point.
   background = rtf.get_background_refl(Z,bgmask)
